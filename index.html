@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos JavaScript</title>
+    <link rel="stylesheet" href="metodo.css">
+</head>
+
+<body>
+
+    <h1>Metodos clave de JavaScript</h1>
+    <section>
+        <h2>1. innerHTML</h2>
+        <h3>Ejemplo 1: Cambiar texto</h3>
+        <p id="mensaje">Hola mundo</p>
+        <button onclick="cambiarTexto()">Cambiar texto</button>
+        <h3>Ejemplo 2: Agregar una imagen</h3>
+        <div id="imagen"></div>
+        <button onclick="agregarImagen()">Agregar imagen</button>
+    </section>
+    <hr>
+    <section>
+        <h2>2. document.getElementById()</h2>
+        <h3>Ejemplo 1: Mostrar un mensaje</h3>
+        <p id="aviso">Mensaje inicial</p>
+        <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+        <h3>Ejemplo 2: Cambiar el color de un botón</h3>
+        <button id="btn" onclick="cambiarColor()">Haz clic</button>
+    </section>
+    <hr>
+    <section>
+        <h2>3. querySelector()</h2>
+        <h3>Ejemplo 1: Obtener un elemento por clase</h3>
+        <p class="destacado">Texto importante</p>
+        <button onclick="cambiarColorTexto()">Cambiar color</button>
+        <h3>Ejemplo 2: Obtener un botón y deshabilitarlo</h3>
+        <button class="enviar">Enviar</button>
+        <button onclick="deshabilitar()">Deshabilitar botón</button>
+    </section>
+    <script>
+        function cambiarTexto() {
+            document.getElementById("mensaje").innerHTML =
+            "¡Bienvenido!";
+        }
+        function agregarImagen() {
+            document.getElementById("imagen").innerHTML =
+            '<div class="imagen-ejemplo">🖼️ Imagen agregada correctamente</div>';
+        }
+        function mostrarMensaje() {
+            var elemento = document.getElementById("aviso");
+            elemento.textContent = "Hola Estudiantes";
+        }
+        function cambiarColor() {
+            document.getElementById("btn").style.backgroundColor =
+            "lightblue";
+        }
+        function cambiarColorTexto() {
+            document.querySelector(".destacado").style.color = "red";
+        }
+        function deshabilitar() {
+            document.querySelector(".enviar").disabled = true;
+        }
+    </script> 
+</body>
+</html>
